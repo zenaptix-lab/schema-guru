@@ -21,7 +21,7 @@ object BuildSettings {
   lazy val commonSettings = Seq[Setting[_]](
     organization          :=  "com.snowplowanalytics",
     version               :=  "0.6.2",
-    scalaVersion          :=  "2.10.6",
+    scalaVersion          :=  "2.11.8",
     crossScalaVersions    :=  Seq("2.10.6", "2.11.7"),
     scalacOptions         :=  Seq("-deprecation", "-encoding", "utf8",
                                   "-unchecked", "-feature",
@@ -59,7 +59,7 @@ object BuildSettings {
     assemblyOption in assembly ~= { _.copy(prependShellScript = Some(defaultShellScript)) },
 
     // Name it as an executable
-    jarName in assembly := { s"${name.value}-${version.value}" }
+    jarName in assembly := { s"${name.value}-${version.value}.jar" }
   )
 
   lazy val sbtAssemblyCoreSettings = sbtAssemblyCommonSettings ++ Seq(
